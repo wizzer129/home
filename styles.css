@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 
 body {
-    background-image: url("./backgrounds/background.jpg");
+    background-image: url("./backgrounds/skyscrapers.jpeg");
     margin: 0px;
 }
 
@@ -15,11 +15,12 @@ body {
     flex-direction: column;
 }
 
+/* original red color: #51201a;*/
 #clock {
     font-size: 3.5rem;
     font-weight: 600;
     font-family: "Roboto Mono";
-    color: #51201a;
+    color: #fff;
     margin-bottom: 0.25em;
 }
 
@@ -52,7 +53,7 @@ body {
 
 .weather-container {
     width: 30%;
-    background-color: #272727;
+    background-color: rgba(39, 39, 39, .90);
     padding: 1em;
     border-radius: 3px;
     font-family: "Roboto Mono";
@@ -94,7 +95,7 @@ body {
 
 .bookmark-set {
     padding: 1em;
-    background-color: #272727;
+    background-color: rgba(39, 39, 39, .95);
     border-radius: 3px;
     font-family: "Roboto Mono";
     font-size: 0.85rem;
@@ -118,7 +119,7 @@ body {
 
 .bookmark {
     text-decoration: none;
-    color: #a04747;
+    color: #ea4563;
     display: block;
     margin: 0.5em 0em;
 }
