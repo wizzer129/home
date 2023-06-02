@@ -1,129 +1,214 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+/* body {
+	--s: 222px;
+	--c1: #4e0181;
+	--c2: #d344cc;
+	--c3: #3db5ec;
+
+	--_g: var(--c1) 10%, var(--c2) 10.5% 19%, #0000 19.5% 80.5%, var(--c2) 81% 89.5%, var(--c3) 90%;
+	--_c: from -90deg at 37.5% 50%, #0000 75%;
+	--_l1: linear-gradient(145deg, var(--_g));
+	--_l2: linear-gradient(35deg, var(--_g));
+	background: var(--_l1), var(--_l1) calc(var(--s) / 2) var(--s), var(--_l2), var(--_l2) calc(var(--s) / 2) var(--s),
+		conic-gradient(var(--_c), var(--c1) 0) calc(var(--s) / 8) 0,
+		conic-gradient(var(--_c), var(--c3) 0) calc(var(--s) / 2) 0,
+		linear-gradient(90deg, var(--c3) 38%, var(--c1) 0 50%, var(--c3) 0 62%, var(--c1) 0);
+	background-size: var(--s) calc(2 * var(--s) / 3);
+} */
 
 body {
-    background-image: url("./backgrounds/skyscrapers.jpeg");
-    margin: 0px;
-}
+	/** background styles*/
+	/* --s: 100px;
+	--c1: #4e0181;
+	--c2: #3db5ec;
+	--b1: rgba(0, 0, 0, 0.658);
+	--_g: var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%, var(--c1) 36% 44%, var(--c2) 46% 54%,
+		var(--c1) 56% 64%, var(--c2) 66% 74%, var(--c1) 76% 84%, var(--c2) 86% 94%;
+	background: radial-gradient(100% 100% at 100% 0, var(--c1) 4%, var(--_g), var(--b1) 96%, #0000),
+		radial-gradient(100% 100% at 0 100%, #0000, var(--b1) 4%, var(--_g), var(--c1) 96%) var(--c1);
+	background-size: var(--s) var(--s); */
 
+	--s: 100px; /* control the size */
+	--c1: #f000db;
+	--c3: #3db5ec;
+	--c2: #621882;
 
-.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+	--_c: 75%, var(--c3) 52.72deg, #0000 0;
+	--_g1: conic-gradient(from -116.36deg at 25% var(--_c));
+	--_g2: conic-gradient(from 63.43deg at 75% var(--_c));
+	background: var(--_g1), var(--_g1) calc(3 * var(--s)) calc(var(--s) / 2), var(--_g2),
+		var(--_g2) calc(3 * var(--s)) calc(var(--s) / 2),
+		conic-gradient(
+			var(--c2) 63.43deg,
+			var(--c1) 0 116.36deg,
+			var(--c2) 0 180deg,
+			var(--c1) 0 243.43deg,
+			var(--c2) 0 296.15deg,
+			var(--c1) 0
+		);
+	background-size: calc(2 * var(--s)) var(--s);
 
-/* original red color: #51201a;*/
-#clock {
-    font-size: 3.5rem;
-    font-weight: 600;
-    font-family: "Roboto Mono";
-    color: #fff;
-    margin-bottom: 0.25em;
-}
+	--spicy-red: #f0005c;
+	--white: #fff;
+	--search-bar-color: #272727;
+	--container-color: rgba(39, 39, 39, 0.95);
+	--m: 100px;
 
-#search {
-    width: 100%;
-    height: 100vh;
-    background-color: #272727;
-    display: none;
-    position: absolute;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+	font-family: 'Roboto Mono';
 
-#search-field {
-    width: 90%;
-    padding: 0.75em 1em;
-    box-sizing: border-box;
-    background-color: #272727;
-    border: solid 0px #272727;
-    font-family: "Roboto Mono";
-    font-size: 4rem;
-    color: #f2f2f2;
-    outline: none;
-    border-radius: 3px;
-    margin-bottom: 1em;
-    text-align: center;
-}
+	margin: 0px;
 
-.weather-container {
-    width: 30%;
-    background-color: rgba(39, 39, 39, .90);
-    padding: 1em;
-    border-radius: 3px;
-    font-family: "Roboto Mono";
-    color: #fff;
-    text-align: center;
-}
+	.content {
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
 
-.inline {
-    display: inline-block;
-}
+	/* original red color: #51201a;*/
 
-.bookmark-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 60%;
-    margin: 1em 0em;
-}
+	.text-shadow-2px {
+		text-shadow:
+            /* first layer at 1px */ -1px -1px 0px #000, 0px -1px 0px #000, 1px -1px 0px #000,
+			-1px 0px 0px #000, 1px 0px 0px #000, -1px 1px 0px #000, 0px 1px 0px #000, 1px 1px 0px #000,
+			/* second layer at 2px */ -2px -2px 0px #000, -1px -2px 0px #000, 0px -2px 0px #000, 1px -2px 0px #000,
+			2px -2px 0px #000, 2px -1px 0px #000, 2px 0px 0px #000, 2px 1px 0px #000, 2px 2px 0px #000, 1px 2px 0px #000,
+			0px 2px 0px #000, -1px 2px 0px #000, -2px 2px 0px #000, -2px 1px 0px #000, -2px 0px 0px #000,
+			-2px -1px 0px #000;
+	}
 
-@media only screen and (max-width: 1100px) {
-    .container {
-        height: auto;
-    }
+	#clock {
+		font-size: 5rem;
+		font-weight: 600;
+		color: var(--white);
+		/* text-shadow: -1px -1px 0px #000, 0px -1px 0px #000, 1px -1px 0px #000, -1px 0px 0px #000, 1px 0px 0px #000,
+            -1px 1px 0px #000, 0px 1px 0px #000, 1px 1px 0px #000; */
+	}
 
-    #clock {
-        margin-top: 1em;
-    }
+	#search {
+		width: 100%;
+		height: 100vh;
+		background-color: var(--search-bar-color);
+		display: none;
+		position: absolute;
+		box-sizing: border-box;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-    .container>.bookmark-container {
-        flex-direction: column;
-        width: 50%;
-    }
+	#search-field {
+		width: 90%;
+		padding: 0.75em 1em;
+		box-sizing: border-box;
+		background-color: var(--search-bar-color);
+		border: 0px;
+		font-size: 4rem;
+		color: var(--white);
+		outline: none;
+		border-radius: 3px;
+		margin-bottom: 1em;
+		text-align: center;
+	}
 
-    .bookmark-container>.bookmark-set {
-        width: auto;
-        margin: 1em 0em;
-    }
-}
+	.weather-container {
+		background-color: var(--container-color);
+		/* padding: 1em; */
+		padding: 20px;
+		border-radius: 3px;
+		text-align: center;
+		margin-top: var(--m);
+	}
 
-.bookmark-set {
-    padding: 1em;
-    background-color: rgba(39, 39, 39, .95);
-    border-radius: 3px;
-    font-family: "Roboto Mono";
-    font-size: 0.85rem;
-    width: 25%;
-    height: 12em;
-    margin: 0em 0.5em;
-}
+	.margin-top {
+		margin-top: var(--m);
+	}
 
-.bookmark-inner-container {
-    overflow-y: scroll;
-    height: 80%;
-    vertical-align: top;
-}
+	.bookmark-container {
+		display: flex;
+		justify-content: center;
+		width: 80%;
+	}
 
-.bookmark-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-    margin: 0em 0em 0.35em 0em;
-}
+	@media only screen and (max-width: 1000px) {
+		#clock {
+			margin-top: 70px;
+		}
 
-.bookmark {
-    text-decoration: none;
-    color: #ea4563;
-    display: block;
-    margin: 0.5em 0em;
-}
+		.content {
+			height: auto;
+		}
 
-.bookmark:hover {
-    color: #fff;
+		.weather-container {
+			width: auto;
+		}
+
+		.content > .bookmark-container {
+			flex-direction: column;
+			width: 50%;
+		}
+
+		.bookmark-container > .bookmark-set {
+			width: auto;
+			margin: 1em 0em;
+		}
+
+		.margin-top {
+			margin-top: 50px;
+		}
+	}
+
+	.bookmark-set {
+		padding: 1em;
+		background-color: var(--container-color);
+		border-radius: 3px;
+		font-size: 0.85rem;
+		width: 25%;
+		height: 12em;
+		margin: 0em 0.5em;
+	}
+
+	.bookmark-inner-container {
+		overflow-y: scroll;
+		height: 80%;
+		vertical-align: top;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: var(--container-color);
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: var(--spicy-red);
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--container-color);
+	}
+
+	.bookmark-title {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: var(--white);
+		margin: 0em 0em 0.35em 0em;
+	}
+
+	.bookmark {
+		text-decoration: none;
+		color: var(--spicy-red);
+		display: block;
+		margin: 0.5em 0em;
+	}
+
+	.bookmark:hover {
+		color: var(--white);
+	}
 }
