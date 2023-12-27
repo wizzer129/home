@@ -165,7 +165,7 @@
 			window.addEventListener('message', receiveMessage, false);
 
 			function receiveMessage(event) {
-				console.logP('!!!!!!!!!!!!!!!!!!!!! are we even firing????!!?!?!?!?!?', event);
+				console.log('!!!!!!!!!!!!!!!!!!!!! are we even firing????!!?!?!?!?!?', event);
 				// Ensure the message is sent from an allowed origin
 				if (event.origin === 'https://http://127.0.0.1/') {
 					// Access the received data from the message
