@@ -13,6 +13,7 @@
 	</head>
 
 	<body>
+		<iframe id="myIframe" src="https://home.alazo.io/"></iframe>
 		<div id="search">
 			<input id="search-field" type="text" name="search-field" onkeypress="return search(event)" />
 		</div>
@@ -108,6 +109,13 @@
 			}
 
 			window.onload = async () => {
+				// const iframe = document.getElementById('myIframe');
+				// const targetWindow = iframe.contentWindow;
+
+				// const message = 'Your string data to be sent';
+				// console.log('sending data', message);
+				// targetWindow.postMessage(message, 'https://home.alazo.io/');
+
 				let xhr = new XMLHttpRequest();
 				// Request to open weather map
 				xhr.open(
@@ -147,6 +155,20 @@
 					document.getElementById('search').style.display = 'none';
 				}
 			});
+
+			window.addEventListener('message', receiveMessage, false);
+
+			function receiveMessage(event) {
+				// Ensure the message is sent from an allowed origin
+				if (event.origin === 'https://senderSubdomain.yourdomain.com') {
+					// Access the received data from the message
+					const receivedData = event.data;
+
+					console.log('?????????????????', receivedData);
+					// Store data in local storage
+					localStorage.setItem('myData', receivedData);
+				}
+			}
 		</script>
 	</body>
 </html>
